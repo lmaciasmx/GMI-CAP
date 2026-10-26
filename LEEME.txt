@@ -1,0 +1,15 @@
+PLANTILLA BASE DOCKER PARA UN PROYECTO PHP EXISTENTE (CodeIgniter 4 / PHP 8.4)
+
+1. Copia .docker/ dentro de la carpeta raiz de tu proyecto.
+2. Copia .gitignore.example como .gitignore, fusionando las reglas existentes.
+3. Crea .docker/local/.env copiando .docker/local/.env.example y pon claves SOLO LOCALES.
+4. Asegurate de que public/index.php existe (o adapta nginx/default.conf).
+5. Desde la raiz del proyecto:
+   docker compose --env-file .docker/local/.env -f .docker/local/compose.yaml up -d --build
+6. Composer dentro de Docker:
+   docker compose --env-file .docker/local/.env -f .docker/local/compose.yaml exec php composer install
+   (requiere composer.json en la raiz; si no existe, primero ejecuta composer init dentro del contenedor.)
+7. Abre http://localhost:8090 (o el APP_PORT seleccionado).
+8. Si es CI4, configura su .env de aplicacion para baseURL http://localhost:8090/ y base de datos host=db, puerto=3306.
+9. Esta plantilla local NO es un compose productivo. Ubuntu exige configurar rutas, puertos, red DB, SSL, secretos y respaldo por proyecto.
+10. No subas .env, claves, bases de datos ni respaldos al repositorio.

@@ -1,0 +1,5 @@
+Documentacion
+http://www.position-absolute.com/articles/jquery-form-validator-because-form-validation-is-a-mess/
+
+Ejemplos:
+http://www.position-relative.net/creation/formValidator/demos/demoValidators.html#

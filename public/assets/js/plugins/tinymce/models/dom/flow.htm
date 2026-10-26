@@ -1,0 +1,1619 @@
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/CBOL/portal/layout/js/jquery-combined.min.js"></script>
+<script type="text/javascript" src="/CBOL/common/js/Citi_TA.min.js"></script>
+
+
+
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+
+<script type="text/javascript" src="/resources/js/libs/citi_s_codeB.js"></script>
+<script>
+	$('html').addClass('cbolui-html');
+	
+	//ensighten requirement 6.1, 6.2
+	var env = window.location.hostname.toString();
+	//loaded correct Version
+	var ensightonScript = document.createElement("script");
+		ensightonScript.type = "text/javascript";
+	if((env.indexOf("sit") !== -1) || (env.indexOf("uat") !== -1) || (env.indexOf("dev") !== -1) || (env.indexOf("gtgcg-avtlw03s") !== -1)){
+		ensightonScript.src = '//nexus.ensighten.com/citi/mex_stage/Bootstrap.js';
+		$('head').append(ensightonScript)
+	  //document.write(unescape("%3Cscript src='//nexus.ensighten.com/citi/mex_stage/Bootstrap.js' async type='text/javascript'%3E%3C/script%3E")); 
+	}else{
+		ensightonScript.src = '//nexus.ensighten.com/citi/mex_prod/Bootstrap.js';
+		$('head').append(ensightonScript) 
+		//document.write(unescape("%3Cscript src='//nexus.ensighten.com/citi/mex_prod/Bootstrap.js' async type='text/javascript'%3E%3C/script%3E"));
+	}
+</script>
+
+
+
+
+
+	
+		<link type="text/css" rel="stylesheet" href="/CBOL/common/css/Citi_TA.min.css">
+		<link type="text/css" rel="stylesheet" href="/JFP/regional/css/ViewRecord.css">
+	
+	
+	
+
+
+
+<!-- Place holder for global Application specific css-->
+
+
+<!-- Place holder for region to include css which is common across all Application-->
+
+
+<!-- Place holder for region to include css which is Specific to Application-->
+
+
+
+<script type="text/javascript" src="/CBOL/portal/layout/js/jquery-combined.min.js"></script>
+
+<script type="text/javascript" src="/CBOL/common/js/jfp.combined.min.js"></script>
+
+
+      
+       
+      
+            <script type="text/javascript" src="/CBOL/common/js/Citi_Global.min.js"></script>
+
+      
+  
+
+<!-- Place holder for global Application specific JS-->
+
+
+<!-- Place holder for region to include JS which is common across all Application-->
+
+
+<!-- Place holder for region to include JS which is Specific to Application-->
+
+
+<!-- Going Forward we will remove below two place holders-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+#printRecordContainer #printRecordHeader {
+	height:auto;
+	padding:10px 0;
+}
+#printRecordCommonInfo #printrecordHeader {
+	border: none;
+}
+
+/* Defect 9091 */
+html.cbolui-html #printRecordContainer .cA-printerLinks .cN-linkButton .cN-buttonCarat {
+  margin-right: 3px;
+  margin-top: 3px;
+}
+#printRecordContainer .cN-primaryNav {
+   margin-top: 23px;
+}
+</style>
+
+<script type="text/javascript" language="javascript">
+(function(){
+	var f = function(){
+		      $jq(function($){ 
+			if($jq("#viewRecordEmailDialogueBox").jfpwidget() === undefined){
+				$jq("#viewRecordEmailDialogueBox").jfpwidget(new CJW.jfp.widget.Overlay(
+	{
+			wrapperSet: "#viewRecordEmailDialogueBox",
+			hideTitleBar: false,
+			dialog: true
+		}, 
+	{ 
+            draggable: false,
+            resizable: false,
+            position: [80, 160],
+            width: 468,
+            height: 226,
+            shadowOffset: 20,
+            hideTitleBar: true,
+            shadow:true,
+            modal: true,
+            closeText: ''
+        }, 
+	{}));
+			}
+		 }
+		  );
+ 	};
+	if (window.$RDY){
+		$RDY('CJW.jfp.widget.Overlay',f);
+	}
+	else{
+		f();
+	}
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+(function(){
+	var f = function(){
+		      $jq(function($){ 
+			if($jq("#emailOverlaySpinner").jfpwidget() === undefined){
+				$jq("#emailOverlaySpinner").jfpwidget(new CJW.jfp.widget.Spinner(
+	{
+			wrapperSet: "#emailOverlaySpinner"
+		}, 
+	{}, 
+	{
+        '/topic/spinner' : ['postconstruction', 'block', 'unblock']
+    }));
+			}
+		 }
+		  );
+ 	};
+	if (window.$RDY){
+		$RDY('CJW.jfp.widget.Spinner',f);
+	}
+	else{
+		f();
+	}
+})();
+</script>
+
+
+<div id="printRecordContainer">
+	<div id="printRecordHeader">
+		<div id="citiBankLogo;> <a href="#" class="cA-printerlogo"><img alt="Citibank" src="/JFP/regional/images/layout/bana_banca_logo.png" /></a></div>
+		<ul class="cN-primaryNav cA-printerLinks">
+		  
+			
+       		
+       			
+				
+				
+					<li class="cN-primaryNavSecondaryOption cN-linkButton">
+						<span class="cM-spriteBase cN-buttonCarat"></span>
+						<a ID="cmlink_PrintRecord" class="cbolui-modules-sitecatalyst-link-trackable" href="javascript:window.print();" target="_top"  >Imprimir</a>
+					</li>
+				
+			
+			
+			
+				
+				
+				
+					<li class="cN-primaryNavSecondaryOption cN-linkButton">
+						<span class="cM-spriteBase cN-buttonCarat"></span>
+						<a ID="cmlink_SavePrintRecord" class="cbolui-modules-sitecatalyst-link-trackable" href="javascript:void(0);" target="_top"  >Guardar</a>
+						<form id="print_save" method="post" action="/MXGCB/CBOL/common/print/flow.action">
+							<input type="hidden" name="summaryKey" value="" id="summaryKey"/>    
+							<input type="hidden" name="event" value="save" id="event"/>    
+						</form>
+					</li>
+				
+			
+			
+			
+			 
+       		 
+		</ul>
+	</div>
+	
+	<div id="printRecordCommonInfo">
+		
+		
+			<div id="registrationID">
+				<span id="registraionIDLabel" role="gridcell" tabindex="0"> 
+					
+				</span> 
+				<span id="registraionID" role="gridcell" tabindex="0">
+					ALEXIS ADRIANA HERNANDEZ MONTES DE O  
+				</span>
+			</div>
+		
+		<div id="asOf" tabindex="0" role="gridcell">
+			<span id="asOfText"> 
+				
+			</span> 
+			<span id="time">
+				21 Feb 2025 15:44:38
+			</span>
+		</div>
+	</div>
+	
+	
+</div>
+
+<div id="viewRecordEmailDialogueBox" class="emailSpinnerWrapper"></div>
+<div id="emailOverlaySpinner"></div>
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div id="saveAlert" class="cbolui-hidden cbolui-overlay cbolui-overlay-cancel">
+	
+
+
+
+
+
+
+
+<div id="cbolui-common-overlay-cancel-saveAlert" class="cbolui-container cbolui-clearfix" >
+	
+		
+		<div class="cbolui-overlay-aboveContent cbolui-clearfix ">
+			<h1>Recibo</h1>
+		</div>
+		<div class="cancelOverlayContentArea">	
+			
+			
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+	
+		
+	
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cbolui-icon-wrapper">
+	<span  aria-hidden="true" class="cbolui-icon-globalSpriteBase cbolui-icon-redErrorFlat"></span>
+	<span class="cbolui-sr-only"></span>  
+	
+	<span class="cbolui-icon_text"><strong>El recibo se guardará automáticamente en este dispositivo.</strong></span>
+	
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 
+
+ 
+
+			
+			<p>Por tu seguridad te recomendamos borrarlo si estás en una computadora pública.</p>
+		</div>	
+		
+		<div class="cbolui-overlay-nav">
+			
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+	
+	
+	
+
+
+	
+	
+		
+	
+
+
+	
+	
+		
+	
+
+
+
+<div class="cbolui-divider-dotted cbolui-divider-nav "></div>
+
+			
+
+<nav class="cbolui-bottom-nav cbolui-clearfix" role="navigation">
+	
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+	
+
+
+	
+	
+	
+		
+			
+			
+			
+				<button id="secondarySave" type="button"  class="cbolui-cta cbolui-secondary-cta">Cancelar</button>
+			
+		
+	
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+	
+
+
+	
+	
+	
+		
+			
+			
+			
+				<button id="primarySave" type="button"  class="cbolui-cta cbolui-primary-cta cbolui-cta-large">Continuar</button>
+			
+		
+	
+
+</nav>
+		</div>
+	
+</div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+	citiUniversal.common.overlayModule.initializeSingleOverlay('#saveAlert');
+
+	$('#saveAlert').find(".cbolui-icon-redErrorFlat").addClass("cbolui-icon-blueCircleAlert");
+	$('#saveAlert').find(".cbolui-icon-redErrorFlat").removeClass("cbolui-icon-redErrorFlat");
+	$('#cmlink_SavePrintRecord').off(".cbolui-print").on('click.cbolui-print', function() {
+		$('#saveAlert').jfpwidget('open');
+	});
+	$('#primarySave').click(function() {
+		$('#print_save').submit();
+		$('#saveAlert').jfpwidget('close');
+	});	
+	$('#secondarySave').click(function() {
+		$('#saveAlert').jfpwidget('close');
+	});
+})
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cbolui-container cbolui-modules-viewRecord-container cbolui-clearfix">
+
+	<!-- Wrapper Container Starts Here -->
+	
+
+
+
+
+
+
+
+<div id="cbolui-cbol_pnt-locexttra-confirm" class="cbolui-container cbolui-clearfix" >
+	
+
+		<!-- Confirm Form Starts Here -->
+		
+
+
+
+
+<form id="cbol_locexttra_ConfirmForm" role="form" autocomplete="off" name="cbol_locexttra_ConfirmForm" class="">
+	
+			<div class="cbolui-clearfix"></div>
+			<div id="printrecordHeader" class="cbolui-hidden">
+				<!-- Page Header -->
+				
+					<h2>
+						Pago interbancario
+					</h2>
+				
+
+				<!--Disclosure-->
+				
+			</div>
+
+			
+			<p></p>
+			
+			
+				
+					<!-- Confirmation message & confirmation number -->
+					<!--R43 SHOW DISCLAIMER MESSAGE INTERBANK PAYMENT - START -->
+					
+					
+						<strong>Tu pago ha sido aceptado.
+							
+								<br/><b> Número de autorización </b>
+	      							462023.
+							
+						</strong>
+					
+					<!--R43 SHOW DISCLAIMER MESSAGE INTERBANK PAYMENT - END -->
+				
+				
+			
+
+			<!-- Introductory Text -->
+			
+			
+			
+			
+			<h3>
+				
+			</h3>
+			<!-- To From Configuration -->
+			<p></p>
+			
+			<!-- From To Configuration -->
+			
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmFromSection" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmFromSection-label">Cuenta de retiro:</label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmFromSection-value" class="cbolui-form-static-label-value">Chq. MiCuenta  **603  MXN
+		
+	</div>
+	
+		<div class="cbolui-form-static-label">
+			<label id="cbol_locexttra_ConfirmFromSection-secLabel">
+						CLABE asociada:
+					</label>
+		</div>	
+		<div id="cbol_locexttra_ConfirmFromSection-secValue" class="cbolui-form-static-label-value secLabelTopPadding">
+	                	***************039
+	                
+		</div>
+	
+</div>
+
+
+	</div>
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmToSection" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmToSection-label">Cuenta de depósito:
+					 <br/>
+					  <span class="additionalInfoText staticControl">(Dato no verificado por esta institución)</span>
+					   </label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmToSection-value" class="cbolui-form-static-label-value">HOSPEDANDO-SIST TRANSF Y PAGOS-CLABE-268-HOSPEDANDO
+		
+	</div>
+	
+</div>
+
+
+	</div>
+
+			
+			<h3>
+				Detalle del pago
+			</h3>
+			<!-- Amount Field -->
+			
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmEnteredAmount" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmEnteredAmount-label">Importe:</label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmEnteredAmount-value" class="cbolui-form-static-label-value">$ 868.84
+		
+	</div>
+	
+</div>
+
+
+	</div>
+
+			
+			<!-- Day of transfer Field -->
+			
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmDayOfTransfer" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmDayOfTransfer-label">Plazo:</label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmDayOfTransfer-value" class="cbolui-form-static-label-value">Mismo día
+		
+	</div>
+	
+</div>
+
+
+	</div>
+
+			
+			<!-- Epic 1651 - Nemesis Team-->			
+			
+			<!-- Tracking Number -->
+			
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmTrackingNumber" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmTrackingNumber-label">Clave de rastreo:</label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmTrackingNumber-value" class="cbolui-form-static-label-value">085904620234305259
+		
+	</div>
+	
+</div>
+
+
+	</div>
+
+			
+			<!-- Type of Account Field -->
+			
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmTypeOfAccount" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmTypeOfAccount-label">Tipo de cuenta:</label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmTypeOfAccount-value" class="cbolui-form-static-label-value">CLABE
+		
+	</div>
+	
+</div>
+
+
+	</div>
+
+			
+			<!-- Type of credit Field -->
+			
+			<!-- Type of Person Field -->
+			
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmTypeOfPerson" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmTypeOfPerson-label">Tipo de persona:</label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmTypeOfPerson-value" class="cbolui-form-static-label-value">Persona Moral
+		
+	</div>
+	
+</div>
+
+
+	</div>
+
+			
+			<!-- Reference number Field -->
+			
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmReferenceNumber" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmReferenceNumber-label">
+                    		Referencia Numérica:
+                    	</label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmReferenceNumber-value" class="cbolui-form-static-label-value">9764900
+		
+	</div>
+	
+</div>
+
+
+	</div>
+
+			
+			<!-- Concept of Payment Field -->
+			
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmConceptOfPayment" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmConceptOfPayment-label">Concepto de pago:</label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmConceptOfPayment-value" class="cbolui-form-static-label-value">Compra de Hosting
+		
+	</div>
+	
+</div>
+
+
+	</div>
+
+			
+			<!-- Email Field -->
+			
+			<!-- Email Note Field -->
+			
+			<!-- RFC Field -->
+			
+			<!-- IVA Field -->
+			
+			<!-- Epic 1651 - Nemesis Team-->			
+			
+				<!-- Date of Transfer Field -->
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmDateOfTransfer" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmDateOfTransfer-label">Fecha:</label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmDateOfTransfer-value" class="cbolui-form-static-label-value">21 Feb 2025
+		
+	</div>
+	
+</div>
+
+
+	</div>
+
+				
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	<div class="cbolui-form-staticControls cbolui-grid-row">
+
+<div id="cbol_locexttra_ConfirmTimeOfTransfer" class="cbolui-form-group cbolui-form-group-static cbolui-clearfix">
+	<div class="cbolui-form-static-label">
+		
+			<label id="cbol_locexttra_ConfirmTimeOfTransfer-label">Hora:</label>
+			
+		
+		
+	</div>
+	<div id="cbol_locexttra_ConfirmTimeOfTransfer-value" class="cbolui-form-static-label-value">15:41:50
+		
+	</div>
+	
+</div>
+
+
+	</div>
+
+				
+			
+			<!--  Fx & Fee -->
+			
+			
+				
+			
+			<!-- Disclaimer1 -->
+			
+			
+		<!-- InterBank Disclaimer Starts Here -->
+			
+											
+				
+
+
+
+
+
+ 
+	<div id="interBankTfrDisclaimer" class="cbolui-disclaimer cbolui-disclaimer-bottom"><b>Importante: </b>Tu pago interbancario no genera algún costo o comisión.</div>
+
+ 
+				
+			
+			<!-- PCR 371 -->
+			<!-- 5 minute legend deleted for all interbank payments flows-->		
+			
+			<!-- END PCR 371 -->
+			
+			
+				
+			<!-- Disclaimer2 -->
+			
+		<!-- INFO DESCLAIMER -->
+			<!-- Wrapper Container Starts Here -->
+	
+
+
+
+
+
+
+
+<div id="cbolui-cbol-common-viewRecord" class="cbolui-container cbolui-clearfix" >
+	
+	
+		
+
+
+
+
+
+ 
+	<div id="viewRecordPrintFooter" class="cbolui-disclaimer cbolui-disclaimer-bottom">Este documento es de carácter informativo, por lo que no tiene validez oficial como comprobante fiscal. Todos los Derechos Reservados 1998-2025. Grupo Financiero Banamex, S.A. de C.V. <br>Para cualquier duda o aclaración comunícate con nosotros al Tel. 55 1226 3990.</div>
+
+
+	
+	
+</div> 			
+			<input type="hidden" name="_flowExecutionKey" value="_cspring-web-flow-pnt_locexttra_k14C2A7E5-38BC-ECF0-BA40-20443F0778F0" id="flowExecutionKey"/>
+			<input type="hidden" name="_eventId" value="submit" id="eventId"/>
+		
+</form>
+		<!-- Confirmation Form Ends Here -->
+	
+</div>
+	<div>
+		<!-- Wrapper Container Ends Here -->
+		<script type="text/javascript">
+			jQuery(document).ready(
+					function() {
+						var summarykey = "locexttra";
+						$('#summaryKey').val(summarykey);
+						var flowKey = $('#flowExecutionKey').val();
+						$(window.opener.document.getElementById('flowExeKey'))
+								.attr('value', flowKey);
+						$('#printRecordCommonInfo').prepend($('#printrecordHeader').detach().removeClass('cbolui-hidden'));
+						$("h3").each(function () {
+							if ($.trim($(this).text()) == '') {
+								$(this).addClass("cbolui-hidden");
+							}
+						});
+					});
+					
+			// R13 Ensighten Ph2
+			$("#cmlink_PrintRecord").addClass("bnmxref_printBotton");
+			$("#cmlink_SavePrintRecord").addClass("bnmxref_saveBotton");
+			
+			_bnmxData =  {};
+			_bnmxData.PgID = window.opener._bnmxData.PgID + "|VerComprobante";
+			_bnmxData.UserId = window.opener._bnmxData.UserId;
+			_bnmxData.language = window.opener._bnmxData.language;
+			_bnmxData.server = window.opener._bnmxData.server; 
+		
+			var page = 'CLABE_ACCOUNT_NUMBER';
+			// Ensighten Phase 1 R17.1 : other bank credit card
+			if(page == 'CREDIT_ACCOUNT_NUMBER'){
+				_bnmxData.siteSection1= "MX|BNP3|TRANS_PAGOS";
+				_bnmxData.siteSection2= "MX|BNP3|TRANS_PAGOS|PAGOS";
+				_bnmxData.pageCat="MX|BNP3|CONFIRMACION";
+				_bnmxData.eventList= "selfservComplete";
+			}
+			try{ 
+				
+				bnmx_tms.sendMetric(); //Executing this funcation for ensighten to capture the tags in the page
+			}catch(e){ 
+			    console.error(e); 
+			}
+			var prop1Value='BankPayee';
+			
+			/*SiteCatalyst view record page dynamic content*/
+			if(prop1Value == "CreditCardPayee"){
+				s.pageName=""
+			}
+			else if(prop1Value == "BankPayee"){
+				s.pageName=""
+			}
+			
+
+		</script>
+		<style>
+			span.additionalInfoText{
+				 display: inline-block;
+				margin: -18px 0 18px 0;
+				color: #999;
+				font-size: 12px !important;
+				font-style: italic;
+		  }
+		  span.additionalInfoText.staticControl{
+			 margin: 4px 0 0 0; 
+		  }
+		</style>

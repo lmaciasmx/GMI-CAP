@@ -1,0 +1,1 @@
+2025-07-16 22:17:39: imagepng(C:\xampp2\htdocs\Invoiice_v1\img/qrfacturacion/QR1558759200.png): Failed to open stream: No such file or directory

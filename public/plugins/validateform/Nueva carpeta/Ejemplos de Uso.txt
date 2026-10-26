@@ -1,0 +1,14 @@
+$("#formID1").validationEngine({promptPosition : "centerRight", scroll: false}); 
+$("#formID1").validationEngine('validate') 
+$('#formID1').validationEngine('hideAll');
+
+<form id="formID1" class="formular" method="post" action="">
+<input value="" class="validate[required]" type="text" name="email" id="email" />
+<input class="validate[required]" type="checkbox" id="agree" name="agree"/>
+<select name="sport" id="sport" class="validate[required]" id="sport">
+<option value="">Choose a sport</option>
+<option value="option1">Tennis</option>
+<option value="option2">Football</option>
+<option value="option3">Golf</option>
+</select>
+</form>

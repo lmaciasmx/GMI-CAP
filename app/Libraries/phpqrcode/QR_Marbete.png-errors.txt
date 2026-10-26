@@ -1,0 +1,1 @@
+2025-09-17 12:59:41: imagepng(img/QR_Marbete.png): Failed to open stream: No such file or directory2025-09-17 13:26:21: imagepng(img/QR_Marbete.png): Failed to open stream: No such file or directory

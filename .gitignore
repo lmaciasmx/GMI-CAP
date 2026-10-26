@@ -1,0 +1,71 @@
+# =========================================
+# GRUPOMAR - ESTANDAR GITIGNORE CI4 / DOCKER
+# =========================================
+
+# 1. Configuraciones privadas
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# 2. Dependencias
+/vendor/
+/node_modules/
+
+# 3. Archivos generados por CodeIgniter
+/writable/
+
+# 4. Certificados y claves privadas
+*.key
+*.pem
+*.p12
+*.pfx
+*.p8
+
+# 5. Respaldos y exportaciones
+*.sql
+*.sql.gz
+*.bak
+*.bak-*
+*.tar
+*.tar.gz
+
+# 6. Archivos temporales
+*.log
+*.tmp
+php_errors.log
+
+# 7. Configuración de editores
+.vscode/
+.idea/
+*.iml
+*.sublime-workspace
+
+# 8. Archivos de Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# 9. Archivos de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# 10. Archivos de Linux
+*~
+.directory
+.Trash-*
+
+# 11. Pruebas
+tests/coverage*
+/results/
+
+# 12. Archivos temporales propios del proyecto
+/public/TEMP/
+/public/img/QRDescarga/
+/img/QRDescarga/

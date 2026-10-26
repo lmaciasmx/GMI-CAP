@@ -1,0 +1,1 @@
+2025-07-16 22:09:39: imagepng(img/qrfacturacion/QR583049324.png): Failed to open stream: No such file or directory

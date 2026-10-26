@@ -1,0 +1,10 @@
+if (window['google'] != undefined && window['google']['loader'] != undefined) {
+if (!window['google']['visualization']) {
+window['google']['visualization'] = {};
+google.visualization.Version = '1.0';
+google.visualization.JSHash = 'f5ce4cf7ba7513f66e3f45efe3b22ee9';
+google.visualization.LoadArgs = 'file\x3dvisualization\x26v\x3d1\x26packages\x3dcharteditor%2Ccorechart';
+}
+google.loader.writeLoadTag("css", google.loader.ServiceBase + "/api/visualization/1.0/f5ce4cf7ba7513f66e3f45efe3b22ee9/ui+es,table+es,charteditor+es.css", false);
+google.loader.writeLoadTag("script", google.loader.ServiceBase + "/api/visualization/1.0/f5ce4cf7ba7513f66e3f45efe3b22ee9/format+es,default+es,ui+es,table+es,orgchart+es,motionchart+es,gauge+es,annotatedtimeline+es,imagechart+es,corechart+es,charteditor+es.I.js", false);
+}

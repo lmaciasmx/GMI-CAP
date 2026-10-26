@@ -1,0 +1,157 @@
+/*
+ * 10. SPECIFIC PAGE CSS
+ * Description: Specific Page CSS
+ */
+/* Login Page */
+#login-page {
+  background: none;
+}
+#login-page .vd_content-section {
+  background: none;
+}
+.login-layout .vd_login-page {
+  width: 380px;
+  margin: 0 auto 60px;
+}
+.login-layout .vd_register-page {
+  width: 600px;
+  margin: 0 auto 60px;
+}
+.login-layout .vd_register-page .heading {
+  margin-top: 30px;
+}
+.login-layout .heading {
+  text-align: center;
+  margin: 60px 0 20px;
+}
+.login-layout .logo {
+  margin-bottom: 5px;
+  text-shadow: 1px -1px 0 #FFFFFF;
+}
+.login-layout .panel {
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #FFFFFF;
+}
+.login-layout .panel-body {
+  padding: 20px 30px;
+  background: none;
+  border-bottom: 1px solid #DDDDDD;
+}
+.login-layout .login-icon {
+  font-size: 68px;
+  width: 120px;
+  height: 120px;
+  line-height: 114px;
+  display: block;
+  margin: 20px auto 30px;
+  border-radius: 60px;
+  border: 1px solid #FFFFFF;
+  background-color: #D5D5D5;
+  text-align: center;
+  color: #FFFFFF;
+}
+.login-layout .login-icon.entypo-icon {
+  line-height: 126px;
+}
+.login-layout footer .vd_bottom {
+  background: none;
+}
+.vd_custom-product .form-group {
+  border-bottom: 1px solid #EEEEEE;
+  margin-left: -25px;
+  margin-right: -25px;
+  padding: 10px;
+}
+.vd_custom-product .content-list .menu-icon {
+  font-size: 60px;
+  width: 115px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.vd_custom-product .content-list .menu-text {
+  margin-left: 130px;
+  padding-bottom: 10px;
+}
+/* Custom Product Page */
+.vd_summary-panel .row:hover {
+  background-color: #F5F5F5;
+}
+.vd_summary-panel .total-row {
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #F5F5F5;
+}
+.vd_summary-panel .total-row .total-title {
+  font-weight: bold;
+}
+.vd_summary-panel .product-title {
+  font-weight: 300;
+}
+/* Front Page  */
+.front-layout header .vd_top-nav .vd_panel-header .logo a {
+  width: 150px;
+  margin-top: 15px;
+}
+.front-layout .vd_mega-menu-wrapper .vd_mega-menu > .mega-ul > .mega-li > a {
+  color: #FFF;
+}
+.front-layout .deploy-word {
+  line-height: 34px;
+}
+#front-1-banner {
+  background: url(../img/banner/cloud.png) no-repeat center bottom;
+}
+#front-1-banner .word-header h1 {
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+  font-size: 46px;
+  margin-top: 38px;
+  margin-bottom: 5px;
+}
+#front-1-banner .vd_content {
+  height: 470px;
+}
+#front-1-banner .icon-banner {
+  position: absolute;
+}
+#front-1-banner .icon-1 {
+  top: 222px;
+  left: 232px;
+}
+#front-1-banner .icon-2 {
+  top: 170px;
+  left: 412px;
+}
+#front-1-banner .icon-3 {
+  top: 203px;
+  left: 765px;
+}
+#front-1-banner .icon-4 {
+  top: 230px;
+  left: 512px;
+}
+#front-1-banner .word-1 {
+  top: 215px;
+  left: 96px;
+}
+#front-1-banner .word-2 {
+  top: 152px;
+  left: 512px;
+}
+#front-1-banner .word-3 {
+  top: 178px;
+  left: 870px;
+}
+.example-icon .append-icon:hover {
+  font-size: 32px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #FFF;
+  padding: 10px;
+  position: absolute;
+  z-index: 4;
+  text-align: center;
+  width: 55px;
+}
