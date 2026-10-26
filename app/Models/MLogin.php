@@ -8,7 +8,7 @@ class MLogin extends Model{
 	//protected $db='db';
 	public function __construct()
 	{
-		$this->db = \Config\Database::connect();
+		$this->db = \Config\Database::connect(); 
 	}
 	
 	function getDatosUsuario($RFC,$PASSWORD,$sistema){
