@@ -4,7 +4,7 @@ namespace App\Models;
 use CodeIgniter\Model;
   
 class MMeta extends Model{
-	
+	 
 	//protected $db='db';
 	public function __construct()
 	{

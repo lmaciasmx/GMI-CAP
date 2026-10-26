@@ -3,7 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
   
-class MSis extends Model{
+class MSis extends Model{ 
 	
 	//protected $db='db';
 	public function __construct()
